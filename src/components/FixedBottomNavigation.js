@@ -83,7 +83,7 @@ export default function FixedBottomNavigation() {
       </TabPanel>
 
       <Paper
-        sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+        sx={{ position: "fixed", pb: 2, bottom: 0, left: 0, right: 0 }}
         elevation={3}
       >
         <BottomNavigation
