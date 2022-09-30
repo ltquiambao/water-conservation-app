@@ -118,7 +118,7 @@ export default function DevicesPage({ devicesData, devicesLiveData }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Typography variant="h5" gutterBottom>
-        My <b>SmartWaterMeter</b> Devices
+        My <b>SmartWaterSaver</b> Devices
       </Typography>
       <Grid
         container
@@ -183,7 +183,7 @@ export default function DevicesPage({ devicesData, devicesLiveData }) {
               alignItems="center"
               spacing={2}
             >
-              <Avatar sx={{ width: 56, height: 56 }}>
+              <Avatar sx={{ width: 56, height: 56, backgroundImage: "url(ocean-calm.jpg)"}}>
                 <ShowerIcon fontSize="large" />
               </Avatar>
               <Typography>Bathroom Shower</Typography>
@@ -198,7 +198,7 @@ export default function DevicesPage({ devicesData, devicesLiveData }) {
               alignItems="center"
               spacing={2}
             >
-              <Avatar sx={{ width: 56, height: 56 }}>
+              <Avatar sx={{ width: 56, height: 56, backgroundImage: "url(ocean-calm.jpg)"}}>
                 <Icon icon="mdi:toilet" width="36" height="36" />
               </Avatar>
               <Typography>Guest Toilet</Typography>
@@ -213,7 +213,7 @@ export default function DevicesPage({ devicesData, devicesLiveData }) {
               alignItems="center"
               spacing={2}
             >
-              <Avatar sx={{ width: 56, height: 56 }}>
+              <Avatar sx={{ width: 56, height: 56, backgroundImage: "url(ocean-calm.jpg)"}}>
                 <Icon icon="mdi:toilet" width="36" height="36" />
               </Avatar>
               <Typography>Bathroom Toilet</Typography>
