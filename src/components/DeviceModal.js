@@ -58,7 +58,7 @@ export default function DeviceModal({
     deviceName,
     deviceId,
     deviceLocation,
-    isWaterFlowing,
+    isWaterLeaking,
     isWaterContam,
     phLevel,
   },
@@ -100,9 +100,9 @@ export default function DeviceModal({
             disabled
             fullWidth
             margin="normal"
-            label="Is the water flowing?"
-            id="isWaterFlowing"
-            value={isWaterFlowing}
+            label="Is the water leaking?"
+            id="isWaterLeaking"
+            value={isWaterLeaking}
           />
           <TextField
             disabled
@@ -116,7 +116,7 @@ export default function DeviceModal({
             disabled
             fullWidth
             margin="normal"
-            label="ph Level?"
+            label="ph Level"
             id="phLevel"
             value={phLevel}
           />

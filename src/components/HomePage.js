@@ -19,7 +19,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function HomePage() {
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%'}}>
       <Stack spacing={2}>
         <TriviaCard />
         <Item elevation={0} >
