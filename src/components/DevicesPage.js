@@ -82,7 +82,7 @@ export default function DevicesPage({ devicesData, devicesLiveData }) {
         </Avatar>
       ),
       SinkB: (
-        <Avatar sx={{ width: 56, height: 56 }}>
+        <Avatar sx={{ width: 56, height: 56, backgroundImage: "url(ocean-calm.jpg)" }}>
           <LocalDrinkIcon fontSize="large" />
         </Avatar>
       ),
