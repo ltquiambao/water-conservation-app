@@ -7,6 +7,11 @@ import Grid from "@mui/material/Unstable_Grid2";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 import TriviaCard from "./TriviaCard";
+import dayjs from 'dayjs';
+import TextField from '@mui/material/TextField';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -17,12 +22,27 @@ const Item = styled(Paper)(({ theme }) => ({
   minHeight: 100,
 }));
 
+
 export default function HomePage() {
+  const [dateValue, setDateValue] = React.useState(dayjs('2022-09-30T21:11:54'));
+
+  const handleChangeDateValue = (newValue) => {
+    setDateValue(newValue);
+  };
   return (
     <Box sx={{ width: "100%" }}>
       <Stack spacing={2}>
         <TriviaCard />
-        <Item elevation={0} sx={{ backgroundImage: "url(ocean-calm-3.jpg)", filter: "blur(8px)" }}>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <MobileDatePicker
+            label="Month"
+            inputFormat="MMMM/YYYY"
+            value={dateValue}
+            onChange={handleChangeDateValue}
+            renderInput={(params) => <TextField {...params} />}
+          />
+        </LocalizationProvider>
+        <Item elevation={0} sx={{ backgroundImage: "url(ocean-calm-3.jpg)"}}>
           <Grid container spacing={2} columns={16} minHeight={100}>
             <Grid
               xs={8}
@@ -31,10 +51,7 @@ export default function HomePage() {
               justifyContent="center"
               alignItems="center"
             >
-              <Typography variant="body1">Your Average water usage</Typography>
-              <Typography variant="caption">
-              for the month of September
-              </Typography>
+            <Typography variant="body1">Your Average water usage</Typography>
             </Grid>
             <Grid
               xs={8}
@@ -61,9 +78,6 @@ export default function HomePage() {
             >
               <Typography variant="body1" fontSize="medium">
                 Your Total Water savings
-              </Typography>
-              <Typography variant="caption">
-                for the month of September
               </Typography>
             </Grid>
             <Grid

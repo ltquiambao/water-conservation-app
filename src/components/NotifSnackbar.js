@@ -9,37 +9,63 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 export default function NotifSnackbar() {
-  const [open, setOpen] = React.useState(false);
+  const [openLeakNotif, setOpenLeakNotif] = React.useState(false);
+  const [openUsageThresh, setOpenUsageThresh] = React.useState(false);
 
   React.useEffect(() => {
     const timer = setTimeout(() => {
-      setOpen(true);
+      setOpenLeakNotif(true);
     }, 10000);
     return () => clearTimeout(timer);
   }, []);
 
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setOpenUsageThresh(true);
+    }, 20000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleClick = () => {
-    setOpen(true);
+    setOpenLeakNotif(true);
   };
 
-  const handleClose = (event, reason) => {
+  const handleCloseLeakNotif = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
 
-    setOpen(false);
+    setOpenLeakNotif(false);
+  };
+
+  const handleCloseUsageThresh = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenUsageThresh(false);
   };
 
   return (
     <Stack spacing={2} sx={{ width: "100%" }}>
       <Snackbar
-        open={open}
+        open={openLeakNotif}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
         autoHideDuration={6000}
-        onClose={handleClose}
+        onClose={handleCloseLeakNotif}
       >
-        <Alert onClose={handleClose} severity="warning" sx={{ width: "100%" }}>
-          There is a leak on your Kitchen Sink. Please check right away.
+        <Alert onClose={handleCloseLeakNotif} severity="warning" sx={{ width: "100%" }}>
+          There is a potential leak on your Kitchen Sink. Please check right away.
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        open={openUsageThresh}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        autoHideDuration={6000}
+        onClose={handleCloseUsageThresh}
+      >
+        <Alert onClose={handleCloseUsageThresh} severity="info" sx={{ width: "100%" }}>
+          You are already at 92% from your water usage limit 
         </Alert>
       </Snackbar>
     </Stack>

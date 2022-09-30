@@ -77,7 +77,7 @@ export default function DevicesPage({ devicesData, devicesLiveData }) {
   const mapDataIcon = (icon) => {
     const map = {
       SinkA: (
-        <Avatar sx={{ width: 56, height: 56 }}>
+        <Avatar sx={{ width: 56, height: 56, backgroundImage: "url(ocean-calm.jpg)" }} >
           <Icon icon="fa-solid:sink" width="36" height="36" />
         </Avatar>
       ),
@@ -138,7 +138,7 @@ export default function DevicesPage({ devicesData, devicesLiveData }) {
               alignItems="center"
               spacing={2}
             >
-              <Avatar sx={{ width: 56, height: 56 }}>
+              <Avatar sx={{ width: 56, height: 56, backgroundImage: "url(ocean-calm.jpg)"}}>
                 <Icon icon="fa-solid:sink" width="36" height="36" />
               </Avatar>
               <Typography>Washroom Sink</Typography>
@@ -153,7 +153,7 @@ export default function DevicesPage({ devicesData, devicesLiveData }) {
               alignItems="center"
               spacing={2}
             >
-              <Avatar sx={{ width: 56, height: 56 }}>
+              <Avatar sx={{ width: 56, height: 56, backgroundImage: "url(ocean-calm.jpg)"}}>
                 <Icon icon="fa-solid:sink" width="36" height="36" />
               </Avatar>
               <Typography>Bathroom Sink</Typography>
@@ -168,7 +168,7 @@ export default function DevicesPage({ devicesData, devicesLiveData }) {
               alignItems="center"
               spacing={2}
             >
-              <Avatar sx={{ width: 56, height: 56 }}>
+              <Avatar sx={{ width: 56, height: 56, backgroundImage: "url(ocean-calm.jpg)"}}>
                 <LocalLaundryServiceIcon fontSize="large" />
               </Avatar>
               <Typography>Laundry</Typography>
